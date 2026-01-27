@@ -5,7 +5,6 @@ import os
 import mlflow
 from dotenv import load_dotenv
 
-
 # Set up Databricks or local MLflow tracking
 def is_databricks() -> bool:
     """Check if the code is running in a Databricks environment."""
@@ -19,7 +18,7 @@ if not is_databricks():
     load_dotenv()
     profile = os.environ.get("PROFILE")
     mlflow.set_tracking_uri(f"databricks://{profile}")
-    mlflow.set_registry_uri(f"databricks-uc://{profile}")
+    mlflow.set_registry_uri(f"databricks-uc")
 
 mlflow.get_tracking_uri()
 # COMMAND ----------
