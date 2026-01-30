@@ -16,6 +16,8 @@ from pyspark.sql import SparkSession
 
 from marvel_characters.config import ProjectConfig
 from marvel_characters.data_processor import DataProcessor
+import warnings
+warnings.filterwarnings("ignore")
 
 config = ProjectConfig.from_yaml(config_path="../project_config_marvel.yml", env="dev")
 
